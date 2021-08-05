@@ -10,4 +10,6 @@
 	<mat-card-actions>
 		<button mat-raised-button color="primary" (click)="onClick($event)">Execute</button>
 	</mat-card-actions>
+	<mat-progress-bar mode="indeterminate" *ngIf="running"></mat-progress-bar>
+	<app-entity-table [data]="data" *ngIf="!running"></app-entity-table>
 </mat-card>

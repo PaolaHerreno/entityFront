@@ -8,16 +8,21 @@ import {EntityparserService} from './entityparser.service';
 })
 export class AppComponent {
     text: string = '';
+    data: any;
+    running: boolean = false;
 
 
     constructor(private entityParser: EntityparserService) {
     }
 
     onClick($event: MouseEvent) {
+        this.running = true;
         this.entityParser.getEntity(this.text).subscribe(success => {
-            console.log(success);
+            this.data = success;
+            this.running = false;
         }, error => {
-            console.log(error)
+            console.log(error);
+            this.running = false;
             alert(error.message);
         });
     }

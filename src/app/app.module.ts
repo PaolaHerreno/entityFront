@@ -7,10 +7,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material/material.module';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { EntityTableComponent } from './entity-table/entity-table.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        EntityTableComponent
     ],
     imports: [
         BrowserModule,

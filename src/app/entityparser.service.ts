@@ -10,6 +10,9 @@ export class EntityparserService {
   constructor(private http: HttpClient) { }
 
     getEntity(text: string): Observable<any>{
-      return this.http.post<any>('http://localhost:5000', text)
+      const payload = {
+          text: text
+      }
+      return this.http.post<any>('http://localhost:5000',payload)
     }
 }
