@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {EntityparserService} from './entityparser.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'entityfront';
+    text: string = '';
+
+
+    constructor(private entityParser: EntityparserService) {
+    }
+
+    onClick($event: MouseEvent) {
+        this.entityParser.getEntity(this.text).subscribe(success => {
+            console.log(success);
+        }, error => {
+            console.log(error)
+            alert(error.message);
+        });
+    }
 }
