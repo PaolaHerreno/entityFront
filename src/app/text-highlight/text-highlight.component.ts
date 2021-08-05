@@ -17,7 +17,8 @@ export class TextHighlightComponent implements OnInit {
 
   ngOnInit(): void {
       if(this.entities){
-          let tmp = this.text;
+          let tmp = this.text.replace("\n","<br\>");
+          console.log(this.text)
           this.entities.forEach(ent => {
               tmp = tmp.replace(ent.value, '<span style="background-color: cadetblue" title="'+ent.type+'">'+ent.value+'</span>');
           });
