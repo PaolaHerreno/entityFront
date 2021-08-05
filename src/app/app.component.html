@@ -5,11 +5,12 @@
 <mat-card>
 	<mat-form-field class="example-full-width" appearance="fill">
 		<mat-label>Leave a comment</mat-label>
-		<textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="text"></textarea>
+		<textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="textField"></textarea>
 	</mat-form-field>
 	<mat-card-actions>
 		<button mat-raised-button color="primary" (click)="onClick($event)">Execute</button>
 	</mat-card-actions>
 	<mat-progress-bar mode="indeterminate" *ngIf="running"></mat-progress-bar>
 	<app-entity-table [data]="data" *ngIf="!running"></app-entity-table>
+	<app-text-highlight [text]="text" [entities]="data" *ngIf="!running" ></app-text-highlight>
 </mat-card>

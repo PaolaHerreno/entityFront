@@ -8,11 +8,14 @@ import {MaterialModule} from './material/material.module';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { EntityTableComponent } from './entity-table/entity-table.component';
+import { TextHighlightComponent } from './text-highlight/text-highlight.component';
+import 'hammerjs';
 
 @NgModule({
     declarations: [
         AppComponent,
-        EntityTableComponent
+        EntityTableComponent,
+        TextHighlightComponent
     ],
     imports: [
         BrowserModule,

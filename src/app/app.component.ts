@@ -7,8 +7,9 @@ import {EntityparserService} from './entityparser.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    text: string = '';
+    textField: string = '';
     data: any;
+    text: string = '';
     running: boolean = false;
 
 
@@ -17,8 +18,9 @@ export class AppComponent {
 
     onClick($event: MouseEvent) {
         this.running = true;
-        this.entityParser.getEntity(this.text).subscribe(success => {
+        this.entityParser.getEntity(this.textField).subscribe(success => {
             this.data = success;
+            this.text = this.textField
             this.running = false;
         }, error => {
             console.log(error);
